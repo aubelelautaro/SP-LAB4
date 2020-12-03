@@ -1,0 +1,59 @@
+<div align="center">
+    <br>
+    <br>
+    <br>
+    <mat-card style="width: 20%;max-width: 400px;background-color: rgb(247, 247, 247);">
+        <form [formGroup]="profileForm">
+            <mat-card-header>
+                <h1><b>Alta de auto</b></h1>
+            </mat-card-header>
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input formControlName="nombre" [(ngModel)]="auto.nombre" matInput>
+            </mat-form-field>
+            <div *ngIf="!profileForm.controls.nombre.valid">
+                <b>Nombre Incorrecto</b>
+            </div>
+            <br>
+
+            <mat-form-field>
+                <mat-label>Marca</mat-label>
+                <input formControlName="marca" [(ngModel)]="auto.marca" matInput>
+            </mat-form-field>
+            <div *ngIf="!profileForm.controls.marca.valid">
+                <b>Marca Incorrecta</b>
+            </div>
+            <br>
+
+            <mat-form-field>
+                <mat-label>Patente</mat-label>
+                <input formControlName="patente" [(ngModel)]="auto.patente" matInput>
+            </mat-form-field>
+            <div *ngIf="!profileForm.controls.patente.valid">
+                <b>Patente Incorrecta</b>
+            </div>
+            <br>
+
+            <mat-form-field>
+                <mat-label>Kilometros</mat-label>
+                <input type="number" formControlName="kilometros" [(ngModel)]="auto.kilometros" matInput >
+            </mat-form-field>
+            <div *ngIf="!profileForm.controls.kilometros.valid">
+                <b>Kilometros Incorrecto</b>
+            </div>
+
+            <mat-form-field>
+                <mat-label>Año</mat-label>
+                <input formControlName="anio" [(ngModel)]="auto.anio" matInput >
+            </mat-form-field>
+            <div *ngIf="!profileForm.controls.anio.valid">
+                <b>Año Incorrecto</b>
+            </div>
+            <br>
+
+            <br>
+            <button mat-flat-button color="primary" [disabled]="!profileForm.valid" style="margin-right: 10px;" (click)="Registrar()">Registrar</button>
+            <button mat-flat-button color="warn" style="margin-left: 10px;" (click)="Cancelar()">Cancelar</button>
+        </form>
+    </mat-card>
+</div>
